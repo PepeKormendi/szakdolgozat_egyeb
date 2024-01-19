@@ -1,0 +1,5 @@
+CLASS zbp_szakd_i_customer DEFINITION PUBLIC ABSTRACT FINAL FOR BEHAVIOR OF zszakd_i_customer.
+ENDCLASS.
+
+CLASS zbp_szakd_i_customer IMPLEMENTATION.
+ENDCLASS.

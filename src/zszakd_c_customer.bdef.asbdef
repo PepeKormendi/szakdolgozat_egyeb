@@ -1,0 +1,16 @@
+projection;
+strict;
+use draft;
+
+define behavior for ZSZAKD_C_CUSTOMER alias Partner
+{
+  use create;
+  use update;
+  use delete;
+
+  use action Resume;
+  use action Edit;
+  use action Activate;
+  use action Discard;
+  use action Prepare;
+}

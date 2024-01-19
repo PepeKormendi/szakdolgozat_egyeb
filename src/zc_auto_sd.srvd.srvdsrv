@@ -1,0 +1,4 @@
+@EndUserText.label: 'Auto service definition'
+define service Zc_auto_sd {
+  expose zc_auto_cds;
+}

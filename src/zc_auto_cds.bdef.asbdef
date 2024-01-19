@@ -1,0 +1,14 @@
+unmanaged implementation in class zbp_c_auto_cds unique;
+//strict; //Comment this line in to enable strict mode. The strict mode is prerequisite to be future proof regarding syntax and to be able to release your BO.
+
+define behavior for zc_auto_cds //alias <alias_name>
+//late numbering
+lock master
+authorization master ( instance )
+//etag master <field_name>
+{
+  create;
+  update;
+  delete;
+  action customerdisplay;
+}

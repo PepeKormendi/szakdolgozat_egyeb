@@ -1,0 +1,5 @@
+@EndUserText.label: 'Service definition Customer'
+define service ZSZAKD_CUSTOMER_SD {
+  expose ZSZAKD_C_CUSTOMER;
+  expose ZSZAKD_I_VH_CUSTOMER;
+}

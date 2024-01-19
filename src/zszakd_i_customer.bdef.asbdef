@@ -1,0 +1,44 @@
+managed;
+strict;
+with draft;
+
+define behavior for ZSZAKD_I_CUSTOMER alias Partner
+implementation in class zbp_szakd_i_customer unique
+persistent table zszakd_customer
+draft table zszakd_custom_d
+lock master
+total etag LastChangedAt
+authorization master ( global, instance )
+etag master LocalLastChangedAt
+{
+  create;
+  update;
+  delete;
+  field ( numbering : managed, readonly ) CustomerUuid;
+  draft action Resume with additional implementation;
+  draft action Edit;
+  draft action Activate;
+  draft action Discard;
+  draft determine action Prepare
+  { }
+
+  mapping for zszakd_customer
+  {
+    CustomerUuid = customer_uuid;
+    FirstName = first_name;
+    LastName = last_name;
+    Street = street;
+    PostalCode = postal_code;
+    City = city;
+    CountryCode = country_code;
+    PhoneNumber = phone_number;
+    EmailAddress = email_address;
+    LocalCreatedBy = local_created_by;
+    LocalCreatedAt = local_created_at;
+    LocalLastChangedBy = local_last_changed_by;
+    LocalLastChangedAt = local_last_changed_at;
+    LastChangedAt = last_changed_at;
+
+  }
+  field ( mandatory ) FirstName;
+}

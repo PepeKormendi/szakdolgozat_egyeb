@@ -1,0 +1,61 @@
+@Metadata.layer: #CORE
+@UI: { headerInfo: { typeName: 'Partner',
+                     typeNamePlural: 'Partners',
+
+                     title: { type: #STANDARD, value: 'FirstName' } },
+       presentationVariant: [{ sortOrder: [{ by: 'FirstName', direction: #DESC }], visualizations: [{type: #AS_LINEITEM}]  }] }
+
+annotate entity ZSZAKD_C_CUSTOMER with
+{
+  @UI.facet: [{ id:            'Partner',
+                purpose:       #STANDARD,
+                type:          #IDENTIFICATION_REFERENCE,
+                label:         'Partner',
+                position:      10 }]
+
+  @UI.hidden: true
+  CustomerUuid;
+  @UI: { lineItem:       [ { position: 10, importance: #HIGH } ],
+  identification: [ { position: 10, label: 'Keresztnév' } ],
+  selectionField: [ { position: 10 } ] }
+  @EndUserText: { label: 'Keresztnév' }
+  FirstName;
+  @UI: { lineItem:       [ { position: 20, importance: #HIGH } ] ,
+   identification: [ { position: 20, label: 'Vezetéknév' } ],
+   selectionField: [ { position: 20 } ] }
+  @EndUserText: { label: 'Vezetéknév' }
+  LastName;
+  @UI: { lineItem:       [ { position: 30, importance: #HIGH } ] ,
+  identification: [ { position: 30, label: 'Utca' } ],
+  selectionField: [ { position: 30 } ] }
+  @EndUserText: { label: 'Utca' }
+  Street;
+  @UI: { lineItem:       [ { position: 40, importance: #HIGH } ] ,
+  identification: [ { position: 40, label: 'Irányítószám' } ],
+  selectionField: [ { position: 40 } ] }
+  @EndUserText: { label: 'Irányítószám' }
+  PostalCode;
+  @UI: { lineItem:       [ { position: 50, importance: #HIGH } ] ,
+  identification: [ { position: 50, label: 'Város' } ],
+  selectionField: [ { position: 50 } ] }
+  @EndUserText: { label: 'Város' }
+  City;
+  @UI: { lineItem:       [ { position: 60, importance: #HIGH } ] ,
+  identification: [ { position: 60, label: 'Országkód' } ],
+  selectionField: [ { position: 60 } ] }
+  @EndUserText: { label: 'Országkód' }
+  CountryCode;
+  @UI: { lineItem:       [ { position: 70, importance: #HIGH } ] ,
+  identification: [ { position: 70, label: 'Telefonszám' } ],
+  selectionField: [ { position: 70 } ] }
+  @EndUserText: { label: 'Telefonszám' }
+  PhoneNumber;
+  @UI: { lineItem:       [ { position: 80, importance: #HIGH } ] ,
+  identification: [ { position: 80, label: 'E-mail' } ],
+  selectionField: [ { position: 80 } ] }
+  @EndUserText: { label: 'Email' }
+  EmailAddress;
+
+  @UI.hidden: true
+  LocalLastChangedAt;
+}
